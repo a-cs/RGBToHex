@@ -15,9 +15,8 @@ app.post('/rgbToHex', (req, res) => {
 		res.json(myJson)
 	} catch (error) {
 		console.log(error.message)
-		const { message} = error
-		const myJson = {message}
-		res.json(myJson)
+		const { message } = error
+		res.status(400).json({error: message})
 	}
 })
 
@@ -30,8 +29,7 @@ app.post('/hextoRgb', (req, res) => {
 	catch (error) {
 		console.log(error.message)
 		const { message} = error
-		const myJson = {message}
-		res.json(myJson)
+		res.status(400).json({error: message})
 	}
 })
 
