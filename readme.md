@@ -38,17 +38,17 @@ Se você completou a primeira parte, parabéns, você está pronto para a segund
 
 Esse servidor deverá ter dois endpoints
 
-- [ ] /rgbToHex
-- [ ] /hextoRgb
+- [x] /rgbToHex
+- [x] /hextoRgb
 
 Ambos endpoints precisam de parametros para funcioar, como 'red', 'blue', green' 
 
 Para te ajudar a fazer as requisições, recomendo que utilize a biblioteca `request` para fazer as requisições.
 
-- [ ] Crie um arquivo de testes para o seu servidor
-- [ ] Implemente o servidor
-- [ ] Teste o Servidor
-- [ ] Garanta que não quebrou os conversores atuais
+- [x] Crie um arquivo de testes para o seu servidor
+- [x] Implemente o servidor
+- [x] Teste o Servidor
+- [x] Garanta que não quebrou os conversores atuais
 
 
 # Como entregar este desafio
