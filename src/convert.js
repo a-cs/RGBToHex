@@ -8,11 +8,26 @@ function ValueToHex(value) {
 	}
 }
 
+function isInRange (value){
+	if (value >= 0 && value <= 255){
+		return true
+	}
+	else {
+		return false
+	}
+}
 function RGBToHex (red, green, blue){
-	if((red && green && blue) || (red === 0 && green === 0 && blue === 0)){
+	if((red && green && blue) || (red === 0 || green === 0 || blue === 0)){
 		
 		if (typeof(red) === "number" && typeof(green) === "number" && typeof(blue) === "number"){
-			return ("#" + ValueToHex(red)+ ValueToHex(green)+ ValueToHex(blue))
+			
+			if(isInRange(red) && isInRange(green) && isInRange(blue)) {
+				return ("#" + ValueToHex(red)+ ValueToHex(green)+ ValueToHex(blue))
+			}
+			else{
+				throw Error("The numbers should be between 0 and 255.")
+			}
+
 		}
 		else {
 			throw Error("You must provide three number arguments.")

@@ -32,7 +32,7 @@ describe("Tests for RGBToHex", () => {
 	it("is value being converted to #ff960a",() => {
 		assert.equal(convert.RGBToHex(255, 150, 10), "#ff960a")
 	})
-	it("should throw an error if object an is undefined",() => {
+	it("should throw an error if an object is undefined",() => {
 		expect(() => {convert.RGBToHex(255, 150)}).throw("You must provide three number arguments.")
 	})
 	it("should throw an error if all objects are undefined",() => {
@@ -43,6 +43,12 @@ describe("Tests for RGBToHex", () => {
 	})
 	it("should throw an error if all objects are not numbers",() => {
 		expect(() => {convert.RGBToHex("red","green","0")}).throw("You must provide three number arguments.")
+	})
+	it("should throw an error if an number is greater than 255",() => {
+		expect(() => {convert.RGBToHex(500,0,0)}).throw("The numbers should be between 0 and 255.")
+	})
+	it("should throw an error if an number is less than 0",() => {
+		expect(() => {convert.RGBToHex(-1,0,0)}).throw("The numbers should be between 0 and 255.")
 	})
 })
 

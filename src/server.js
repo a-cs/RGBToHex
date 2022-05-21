@@ -8,13 +8,13 @@ const app = express()
 app.use(express.json())
 
 app.post('/rgbToHex', (req, res) => {
-	const {red, blue, green} = req.body
+	const {red, green, blue} = req.body
 	try{
-		const hex = convert.RGBToHex(red, blue, green)
+		const hex = convert.RGBToHex(red, green, blue)
 		const myJson = {hex}
 		res.json(myJson)
 	} catch (error) {
-		console.log(error.message)
+		// console.log(error.message)
 		const { message } = error
 		res.status(400).json({error: message})
 	}
@@ -27,7 +27,7 @@ app.post('/hextoRgb', (req, res) => {
 	res.json(rgb)
 	}
 	catch (error) {
-		console.log(error.message)
+		// console.log(error.message)
 		const { message} = error
 		res.status(400).json({error: message})
 	}
